@@ -1,0 +1,8 @@
+﻿function writeLog(siteID,catID,contentID) {
+    $.post("http://search.mohurd.gov.cn/ClientLog/ClientAccessLog.ashx",
+           { 
+             siteid: siteID,
+             catid: catID,
+             contentid: contentID
+         });
+}

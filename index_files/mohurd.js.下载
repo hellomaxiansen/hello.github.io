@@ -1,0 +1,88 @@
+function LTrim(s){for(var i=0;i<s.length;i++)if(s.charAt(i)!=' ')return s.substring(i,s.length);return ""}
+function RTrim(s){for(var i=s.length-1;i>=0;i--)if(s.charAt(i)!=' ')return s.substring(0,i+1);return ""}
+function Trim(s){return RTrim(LTrim(s))}
+function getemail() {
+
+    document.mailLogin.sumbit();
+   
+}
+function adddomain(thisfrom) {
+    if (document.mailLogin.username.value == document.mailLogin.Password.value) 
+  
+        var t = Math.random() * 100000000;
+        document.mailLogin.action = document.mailLogin.action + "?token=" + t;
+        document.mailLogin.LoginName.value = document.mailLogin.username.value + "@mail.cin.gov.cn";
+
+
+}
+
+
+function jump(info) {
+
+    if (info == "xxgk") {
+
+        window.location.href = "http://219.142.101.47";
+    }
+    if (info == "bsdt") {
+
+        window.location.href = "http://www.mohurd.gov.cn/wsbsdtnew/";
+    }
+    else {
+        return false;
+    }
+
+
+
+}
+
+function shijian()
+{
+  var ss=new Date();
+  var year=ss.getFullYear();  
+  var month=ss.getMonth()+1;  
+  var date=ss.getDate();  
+  var day=ss.getDay();
+  if(day==0)
+  {
+    day="日";
+  }
+  else if(day==1)
+  {
+    day="一";
+  }
+  else if(day==2)
+  {
+    day="二";
+  }
+  else if(day==3)
+  {
+    day="三";
+  }
+  else if(day==4)
+  {
+    day="四";
+  }
+  else if(day==5)
+  {
+    day="五";
+  }
+  else
+  {
+    day="六";
+  }   
+  var hours=ss.getHours();
+  var minutes=ss.getMinutes();
+  if(minutes<10)
+  {
+     minutes="0"+minutes
+  }  
+  var seconds=ss.getSeconds();
+  if(seconds<10)
+  {
+     seconds="0"+seconds
+  }  
+  document.getElementById("nyf").innerHTML=year+"年"+month+"月"+date+"日"+" "+"星期"+day;
+}
+setInterval("shijian()", 1000);
+
+var isIE = !!window.ActiveXObject;
